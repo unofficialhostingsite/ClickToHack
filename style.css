@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #81e3ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* Landing Page Styles */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#reveal-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+#reveal-button:hover {
+    background-color: #ff4a3a;
+    transform: scale(1.05);
+}
+
+
+
+header {
+    padding: 20px;
+    background: #4da6ff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: transform 0.2s;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: transform 0.2s;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+}
+
+.candle-wrapper {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.candle {
+    width: 20px;
+    height: 60px;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    animation: flicker 1s infinite;
+}
+
+.flame {
+    width: 10px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+.about, .wishes, .lover-message, .gallery {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about:hover, .wishes:hover, .lover-message:hover, .gallery:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wishes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wishes ul li {
+    background: #ffcccc;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.wishes ul li:hover {
+    transform: scale(1.02);
+}
+
+.lover-message .lover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+@media(min-width: 768px) {
+    .lover-message .lover-content {
+        flex-direction: row;
+    }
+}
+
+.lover-message p {
+    font-size: 1.3em;
+    flex: 1;
+    margin: 10px;
+}
+
+.lover-message img {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.lover-message img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Scroll animations */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
